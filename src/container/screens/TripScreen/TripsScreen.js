@@ -1,11 +1,11 @@
 //React
-import React, {Component} from 'react';
+import React, { Component} from 'react';
 //Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as TripsActions from '../actions/TripsActions';
+import * as TripsActions from '../../../actions/TripsActions';
 //Components
-import Trips from '../components/trips/Trips';
+import TripsList from '../../../components/trips/TripsList';
 
 class TripsScreen extends Component {
     constructor(props, context) {
@@ -19,23 +19,24 @@ class TripsScreen extends Component {
     }
 
     tripSelected() {
-        alert('You have clicked a trip!')
+        const { navigate, trips } = this.props;
+
+        // alert('You have clicked a trip!');
+        navigate('Map', { item: trips[0].name });
+
     }
 
     render() {
         const { trips } = this.props;
 
-        console.log(trips);
-
         return (
-            <Trips trips={ trips }
+            <TripsList trips={ trips }
                    onPress={ this.tripSelected } />
         );
     }
 }
 
 function mapStateToProps(state) {
-    console.log(state);
     return {
         trips: state.trips.lastMonthsTrips,
     };

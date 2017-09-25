@@ -17,7 +17,7 @@ export const fetchTripsSuccess = ({ trips }) => {
 const payload = {
     data: {
         trips: [
-            { id: 1, name: 'Grocery Shopping' },
+            { id: 1, name: 'Grocery Pizza' },
             { id: 2, name: 'Gas' },
             { id: 3, name: 'Corys House' },
             { id: 4, name: 'Parents House' },

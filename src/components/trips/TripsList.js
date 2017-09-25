@@ -4,7 +4,7 @@ import { FlatList, StyleSheet, View, Text } from 'react-native';
 //Components
 import Trip from './Trip';
 
-const Trips = ({ trips, onPress }) => {
+const TripsList = ({ trips, onPress }) => {
     const _keyExtractor = (item, index) => item.id;
 
     const _renderItem = ({ item }) => (
@@ -20,4 +20,4 @@ const Trips = ({ trips, onPress }) => {
 
 const styles = StyleSheet.create({});
 
-export default Trips
+export default TripsList;

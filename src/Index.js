@@ -1,7 +1,7 @@
 //React
 import React, { Component } from 'react';
 //Routing
-import TripsScreen from './container/screens/TripScreen/TripsScreen';
+import HomeScreen from './container/screens/HomeScreen/HomeScreen';
 //Redux
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore';
@@ -18,7 +18,7 @@ export default class Index extends Component {
 
         return (
             <Provider store={store}>
-                <TripsScreen navigate = { navigate }/>
+                <HomeScreen navigate = { navigate }/>
             </Provider>
         );
     }

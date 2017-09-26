@@ -3,6 +3,7 @@ import React, { Component} from 'react';
 //Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import * as TripsActions from '../../../actions/TripsActions';
 //Components
 import TripsList from '../../../components/trips/TripsList';
@@ -14,20 +15,12 @@ class TripsScreen extends Component {
         this.tripSelected = this.tripSelected.bind(this);
     }
 
-    componentDidMount(){
-        this.props.actions.fetchTrips({ user_id: 1 });
-    }
-
     tripSelected() {
-        const { navigate, trips } = this.props;
-
-        // alert('You have clicked a trip!');
-        navigate('Map', { item: trips[0].name });
-
+        alert('You have clicked a trip!');
     }
 
     render() {
-        const { trips } = this.props;
+        const { trips } = this.props.navigation.state.params;
 
         return (
             <TripsList trips={ trips }
@@ -36,16 +29,4 @@ class TripsScreen extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        trips: state.trips.lastMonthsTrips,
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(TripsActions, dispatch)
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TripsScreen)
+export default TripsScreen;

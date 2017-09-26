@@ -6,7 +6,7 @@ import { StackNavigator } from 'react-navigation';
 
 export const ignitePractice2017 = StackNavigator({
     Home: { screen: Index },
-    Trip: { screen: TripScreen }
+    Trips: { screen: TripScreen, }
 });
 
 AppRegistry.registerComponent('ignitePractice2017', () => ignitePractice2017);

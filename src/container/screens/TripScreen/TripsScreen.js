@@ -1,10 +1,5 @@
 //React
 import React, { Component} from 'react';
-//Redux
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
-import * as TripsActions from '../../../actions/TripsActions';
 //Components
 import TripsList from '../../../components/trips/TripsList';
 

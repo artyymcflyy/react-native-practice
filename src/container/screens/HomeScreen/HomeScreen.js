@@ -6,8 +6,6 @@ import { bindActionCreators } from 'redux';
 
 import * as TripsActions from '../../../actions/TripsActions';
 
-import { View, Text } from 'react-native';
-
 
 import Home from '../../../components/home/home';
 

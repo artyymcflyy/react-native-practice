@@ -1,7 +1,8 @@
 //React
 import React, {Component} from 'react';
-//Redux
+//React-Redux
 import { connect } from 'react-redux';
+//Redux
 import { bindActionCreators } from 'redux';
 
 import * as TripsActions from '../../../actions/TripsActions';
@@ -10,26 +11,20 @@ import * as TripsActions from '../../../actions/TripsActions';
 import Home from '../../../components/home/home';
 
 class HomeScreen extends Component {
-    navigationOptions = {
-        title: 'Welcome',
+    static navigationOptions = {
+        title: 'BetterTrack',
     };
 
-    componentDidMount() {
-        this.props.actions.fetchTrips({ user_id: 1 });
-    }
-
     render(){
-        const { navigate, trips } = this.props;
-
+        const { navigate } = this.props.navigation;
         return(
-            <Home navigate={navigate} trips={trips}/>
+            <Home navigate = {navigate}/>
         );
     }
 }
 
 function mapStateToProps(state) {
     return {
-        trips: state.trips.lastMonthsTrips,
     };
 }
 

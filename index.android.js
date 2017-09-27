@@ -1,12 +1,13 @@
+import React, {Component} from 'react';
 import { AppRegistry } from 'react-native';
 import Index from './src/Index';
-import TripScreen from './src/container/screens/TripScreen/TripsScreen'
-import { StackNavigator } from 'react-navigation';
 
-
-export const ignitePractice2017 = StackNavigator({
-    Home: { screen: Index },
-    Trips: { screen: TripScreen, }
-});
+export default class ignitePractice2017 extends Component {
+    render() {
+        return (
+            <Index/>
+        );
+    }
+}
 
 AppRegistry.registerComponent('ignitePractice2017', () => ignitePractice2017);

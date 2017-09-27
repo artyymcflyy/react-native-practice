@@ -11,9 +11,8 @@ class Home extends Component {
     }
 
     showTrips(){
-        const { navigate, trips } = this.props;
-
-        navigate('Trips', {trips: trips});
+        const { navigate } = this.props;
+        navigate('Trips');
     }
 
     render(){
@@ -26,7 +25,7 @@ class Home extends Component {
                     <TouchableHighlight 
                         onPress={()=>{}}
                         style={chevronStyle}>
-                        <Icon name="chevron-left" style={{height: 50}} size={30} />
+                        <Icon name="chevron-left" size={30} />
                     </TouchableHighlight>
 
                     <View style={ mainView } />

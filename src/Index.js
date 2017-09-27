@@ -10,7 +10,7 @@ const store = configureStore();
 
 export default class Index extends Component {
     static navigationOptions = {
-        title: 'Welcome',
+        title: 'BetterTrack',
     };
 
     render() {

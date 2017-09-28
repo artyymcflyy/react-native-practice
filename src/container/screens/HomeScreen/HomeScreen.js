@@ -11,14 +11,24 @@ import * as TripsActions from '../../../actions/TripsActions';
 import Home from '../../../components/home/home';
 
 class HomeScreen extends Component {
+    constructor(props, context){
+        super(props, context);
+        this.showTripsScreen = this.showTripsScreen.bind(this);
+    }
+
     static navigationOptions = {
         title: 'BetterTrack',
     };
 
-    render(){
+    showTripsScreen(){
         const { navigate } = this.props.navigation;
+
+        navigate('Trips');
+    }
+
+    render(){
         return(
-            <Home navigate = {navigate}/>
+            <Home onPress={this.showTripsScreen}/>
         );
     }
 }

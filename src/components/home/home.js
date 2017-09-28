@@ -1,52 +1,30 @@
 import React, { Component } from 'react';
-import { View, TouchableHighlight } from 'react-native';
+import { View } from 'react-native';
 
-import Icon from 'react-native-vector-icons/Entypo'
+import Button from '../buttons/button';
 
-class Home extends Component {
-    constructor(props,context) {
-        super(props, context);
+const Home = props => {
 
-        this.showTrips = this.showTrips.bind(this);
-    }
+    const{ onPress } = props;
 
-    showTrips(){
-        const { navigate } = this.props;
-        navigate('Trips');
-    }
+    const { viewStyle, bottomChevronStyle, inlineChevronStyle, topHalf, bottomHalf, mainView } = styles;
 
-    render(){
-        const { viewStyle, bottomStyle, chevronStyle, topHalf, bottomHalf, mainView } = styles;
+    return(
+        <View style={ viewStyle }>
+            <View style={ topHalf }>
 
-        return(
-            <View style={ viewStyle }>
-                <View style={ topHalf }>
+                <Button style={inlineChevronStyle} name={"chevron-left"}/>
 
-                    <TouchableHighlight 
-                        onPress={()=>{}}
-                        style={chevronStyle}>
-                        <Icon name="chevron-left" size={30} />
-                    </TouchableHighlight>
+                <View style={ mainView } />
 
-                    <View style={ mainView } />
-
-                    <TouchableHighlight 
-                        onPress={()=>{}}
-                        style={chevronStyle}>
-                        <Icon name="chevron-right" size={30} />
-                    </TouchableHighlight>
-                </View>
-
-                <View style={ bottomHalf }>
-                    <TouchableHighlight 
-                        style={ bottomStyle }
-                        onPress={this.showTrips}>
-                        <Icon name="chevron-down" size={30} />
-                    </TouchableHighlight>
-                </View>
+                <Button style={inlineChevronStyle} name={"chevron-right"}/>
             </View>
-        );
-    }
+
+            <View style={ bottomHalf }>
+                <Button style={bottomChevronStyle} name={"chevron-down"} onPress={onPress} />
+            </View>
+        </View>
+    );
 };
 
 const styles = {
@@ -55,12 +33,12 @@ const styles = {
         justifyContent: 'space-between',
         paddingTop: 10
     },
-    bottomStyle: {
+    bottomChevronStyle: {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'
     },
-    chevronStyle: {
+    inlineChevronStyle: {
         flex: 10
     },
     mainView: {

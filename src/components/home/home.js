@@ -7,7 +7,7 @@ const Home = props => {
 
     const{ onPress } = props;
 
-    const { viewStyle, bottomChevronStyle, inlineChevronStyle, topHalf, bottomHalf, middleHalf1, middleHalf2, textInBanner, mainView, monthlyView, banner } = styles;
+    const { viewStyle, bottomChevronStyle, inlineChevronStyle, discountView, discountText, discountTextPercent, topHalf, bottomHalf, middleHalf1, middleHalf2, textInBanner, mainView, monthlyView, banner } = styles;
 
     return(
         <View style={ viewStyle }>
@@ -23,7 +23,12 @@ const Home = props => {
             </View>
 
             <View style={ middleHalf1 }>
-                <Image style={banner} source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}/>
+                <Image style={banner} source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}>
+                    <View style={discountView}>
+                        <Text style={discountTextPercent}>12%</Text>
+                        <Text style={discountText}>Discount</Text>
+                    </View>
+                </Image>
             </View>
 
             <View style={ monthlyView }>
@@ -63,34 +68,49 @@ const styles = {
         flex: 80,
         height: 40,
         alignSelf: 'stretch',
-        backgroundColor: 'green'
     },
     monthlyView: {
-        flex: 10,
-        height: 30,
+        flex: 8,
+        height: 20,
         alignSelf: 'stretch',
-        backgroundColor: 'green'
     },
     topHalf: {
         flexDirection: 'row',
-        flex: 10
+        flex: 8
     },
     bottomHalf: {
         flex: 5
     },
     middleHalf1: {
-        flex: 25
+        flex: 30,
     },
     middleHalf2: {
         flex: 30
     },
     banner: {
+        flex: 5,
         alignSelf: 'stretch',
-        flex: 5
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     textInBanner: {
         textAlign: 'center',
-        fontSize: 30
+        fontSize: 25
+    },
+    discountView: {
+        height: 100,
+        width: 100,
+        borderRadius: 50,
+        backgroundColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    discountTextPercent: {
+        fontSize: 38,
+        fontWeight: '500'
+    },
+    discountText: {
+        fontSize: 15
     }
 };
 

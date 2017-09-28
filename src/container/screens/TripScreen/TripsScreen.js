@@ -4,6 +4,8 @@ import React, { Component} from 'react';
 import { bindActionCreators } from 'redux';
 //React-Redux
 import { connect } from 'react-redux';
+
+import { NavigationActions } from 'react-navigation';
 //Components
 import TripsList from '../../../components/trips/TripsList';
 
@@ -14,6 +16,7 @@ class TripsScreen extends Component {
         super(props, context);
 
         this.tripSelected = this.tripSelected.bind(this);
+        this.goBackHome = this.goBackHome.bind(this);
     }
 
     componentDidMount() {
@@ -24,12 +27,18 @@ class TripsScreen extends Component {
         alert('You have clicked a trip!');
     }
 
+    goBackHome(){
+
+        const backAction = NavigationActions.back();
+
+        this.props.navigation.dispatch(backAction);
+    }
+
     render() {
         const { trips } = this.props;
 
         return (
-            <TripsList trips={ trips }
-                   onPress={ this.tripSelected } />
+            <TripsList trips={ trips } onPress={ this.tripSelected } goBack={this.goBackHome} />
         );
     }
 }

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View } from 'react-native';
+import React from 'react';
+import { View, Image, Text } from 'react-native';
 
 import Button from '../buttons/button';
 
@@ -7,7 +7,7 @@ const Home = props => {
 
     const{ onPress } = props;
 
-    const { viewStyle, bottomChevronStyle, inlineChevronStyle, topHalf, bottomHalf, mainView } = styles;
+    const { viewStyle, bottomChevronStyle, inlineChevronStyle, topHalf, bottomHalf, middleHalf1, middleHalf2, textInBanner, mainView, monthlyView, banner } = styles;
 
     return(
         <View style={ viewStyle }>
@@ -15,9 +15,27 @@ const Home = props => {
 
                 <Button style={inlineChevronStyle} name={"chevron-left"}/>
 
-                <View style={ mainView } />
+                <View style={ mainView }>
+                    <Text style={textInBanner}>January</Text>
+                </View>
 
                 <Button style={inlineChevronStyle} name={"chevron-right"}/>
+            </View>
+
+            <View style={ middleHalf1 }>
+                <Image style={banner} source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}/>
+            </View>
+
+            <View style={ monthlyView }>
+                <Text style={textInBanner}>Monthly Info</Text>
+            </View>
+
+            <View style={ middleHalf2 }>
+                <Image style={banner} source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}/>
+            </View>
+
+            <View style={ middleHalf2 }>
+                <Image style={banner} source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}/>
             </View>
 
             <View style={ bottomHalf }>
@@ -43,17 +61,37 @@ const styles = {
     },
     mainView: {
         flex: 80,
-        height: 50,
+        height: 40,
+        alignSelf: 'stretch',
+        backgroundColor: 'green'
+    },
+    monthlyView: {
+        flex: 10,
+        height: 30,
         alignSelf: 'stretch',
         backgroundColor: 'green'
     },
     topHalf: {
         flexDirection: 'row',
-        flex: 92
+        flex: 10
     },
     bottomHalf: {
-        flex: 8
+        flex: 5
+    },
+    middleHalf1: {
+        flex: 25
+    },
+    middleHalf2: {
+        flex: 30
+    },
+    banner: {
+        alignSelf: 'stretch',
+        flex: 5
+    },
+    textInBanner: {
+        textAlign: 'center',
+        fontSize: 30
     }
-}
+};
 
 export default Home;

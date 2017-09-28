@@ -2,21 +2,21 @@
 import React from 'react';
 import { View, Text, Image, TouchableHighlight } from 'react-native';
 //Components
+import { UserImageRenderer } from '../images/UserImageRenderer';
 
-import Icon from 'react-native-vector-icons/Entypo'
+import Icon from 'react-native-vector-icons/Entypo';
 
 const TripCell = props => {
 
     const { trip, onPress } = props;
 
     const { rowStyle, textStyle, userIcon, chevronStyle } = styles;
+    console.log(trip);
 
     return (
         <View style={ rowStyle }>
-            <Image
-                style={ userIcon }
-                source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}/>
-
+            <UserImageRenderer images={ trip.users } style={ userIcon }/>
+            
             <Text style={ textStyle } onPress={ onPress }>
                 { trip.name }
             </Text>
@@ -51,7 +51,7 @@ const styles = {
         marginRight: 10,
         height: 50,
         width: 50,
-        flex: 1.5
+        flex: 1
     }
 };
 

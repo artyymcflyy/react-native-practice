@@ -7,7 +7,7 @@ const Home = props => {
 
     const{ onPress } = props;
 
-    const { viewStyle, bottomChevronStyle, inlineChevronStyle, discountView, discountText, discountTextPercent, topHalf, bottomHalf, middleHalf1, middleHalf2, textInBanner, mainView, monthlyView, banner } = styles;
+    const { viewStyle, bottomChevronStyle, inlineChevronStyle, discountView, discountText, dividers, dividedViews, discountTextPercent, topHalf, bottomHalf, middleHalf1, middleHalf2, middleHalf3, textInBanner, mainView, monthlyView, banner } = styles;
 
     return(
         <View style={ viewStyle }>
@@ -36,10 +36,20 @@ const Home = props => {
             </View>
 
             <View style={ middleHalf2 }>
-                <Image style={banner} source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}/>
+                <View style={[{marginRight: 20}, dividedViews]}>
+                    <Text>Drive Time</Text>
+                </View>
+                <View style={[{marginRight: 20}, dividers]}/>
+                <View style={dividedViews}>
+                    <Text>Activity</Text>
+                </View>
+                <View style={[{marginLeft: 20},dividers]}/>
+                <View style={[{marginLeft: 20},dividedViews]}>
+                    <Text>Phone Usage</Text>
+                </View>
             </View>
 
-            <View style={ middleHalf2 }>
+            <View style={ middleHalf3 }>
                 <Image style={banner} source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}/>
             </View>
 
@@ -85,6 +95,11 @@ const styles = {
         flex: 30,
     },
     middleHalf2: {
+        flex: 30,
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    middleHalf3: {
         flex: 30
     },
     banner: {
@@ -95,7 +110,8 @@ const styles = {
     },
     textInBanner: {
         textAlign: 'center',
-        fontSize: 25
+        fontSize: 25,
+        elevation: 1
     },
     discountView: {
         height: 100,
@@ -111,6 +127,14 @@ const styles = {
     },
     discountText: {
         fontSize: 15
+    },
+    dividers: {
+        height: 125,
+        width: 2,
+        backgroundColor: 'black'
+
+    },
+    dividedViews: {
     }
 };
 

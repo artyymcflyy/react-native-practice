@@ -17,7 +17,9 @@ class HomeScreen extends Component {
     }
 
     static navigationOptions = {
-        title: 'BetterTrack',
+        header: {
+            visible: false,
+        }
     };
 
     showTripsScreen(){

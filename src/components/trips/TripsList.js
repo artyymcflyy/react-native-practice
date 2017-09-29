@@ -3,7 +3,7 @@ import React from 'react';
 import { FlatList, StyleSheet, View, Text } from 'react-native';
 //Components
 import Trip from './Trip';
-import Button from '../buttons/button';
+import Button from '../assets/button';
 
 const TripsList = ({ trips, onPress, goBack }) => {
     const { bottomChevronStyle } = styles;

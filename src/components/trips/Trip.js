@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, Image, TouchableHighlight } from 'react-native';
 //Components
 import { UserImageRenderer } from '../images/UserImageRenderer';
+import Timestamp from 'react-timestamp';
 
 import Icon from 'react-native-vector-icons/Entypo';
 
@@ -10,16 +11,19 @@ const TripCell = props => {
 
     const { trip, onPress } = props;
 
-    const { rowStyle, textStyle, userIcon, chevronStyle } = styles;
+    const { rowStyle, textStyle, timeStyle, userIcon, chevronStyle, imageStyle } = styles;
     console.log(trip);
 
     return (
         <View style={ rowStyle }>
-            <UserImageRenderer images={ trip.users } style={ userIcon }/>
+            <View style={ imageStyle}>
+                <UserImageRenderer images={ trip.users } />
+            </View>
             
             <Text style={ textStyle } onPress={ onPress }>
                 { trip.name }
             </Text>
+            <Timestamp style={ timeStyle } time={ trip.startTime } component={Text} onPress={ onPress }/>
             <TouchableHighlight 
                 onPress={()=>{}}
                 style={chevronStyle}>
@@ -41,17 +45,19 @@ const styles = {
     },
     textStyle: {
         flex: 6,
-        fontSize: 16
+        fontSize: 16,
+        textAlign: 'left'
+    },
+    timeStyle: {
+        flex: 5,
+        fontSize: 16,
+        textAlign: 'center'
     },
     chevronStyle: {
         flex: 1
     },
-    userIcon: {
-        borderRadius: 50,
-        marginRight: 10,
-        height: 50,
-        width: 50,
-        flex: 1
+    imageStyle: {
+        flex: 4
     }
 };
 

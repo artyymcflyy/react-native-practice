@@ -18,9 +18,7 @@ const UserImageRenderer = (props) => {
         );
     } else {
         return (
-            <Image
-                style={ style }
-                source={{ uri: props.images[0].img }}/>
+            <Image style={ style } source={{ uri: props.images[0].img }}/>
         );
     }
 }

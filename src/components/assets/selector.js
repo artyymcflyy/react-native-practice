@@ -8,7 +8,6 @@ import Button from '../assets/button';
 
 const Selector = props => {
 
-    const {} = props;
     const { mainView, headerText } = styles;
 
     return (

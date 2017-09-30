@@ -83,8 +83,10 @@ const styles = {
         justifyContent: 'center'
     },
     logoImage: {
+        flex: 1,
         width: 300,
-        height: 100
+        height: 300,
+        resizeMode: 'contain'
     }
 };
 

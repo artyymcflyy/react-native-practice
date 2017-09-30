@@ -18,12 +18,13 @@ const styles = {
     headerView: {
         flex: 8,
         height: 20,
-        alignSelf: 'stretch'
+        alignSelf: 'stretch',
+        bottom: 10,
     },
     textInHeader: {
         color: 'white',
         textAlign: 'center',
-        fontSize: 25,
+        fontSize: 32,
         elevation: 1
     }
 };

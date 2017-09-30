@@ -8,18 +8,19 @@ import Button from '../assets/button';
 
 const Selector = props => {
 
-    const {} = props;
+    const {header} = props;
+
     const { mainView, headerText } = styles;
 
     return (
         <View style={mainView}>
-            <Button style={{flex: 10}} name={"chevron-left"}/>
+            <Button style={{flex: 10}} name={"chevron-thin-left"}/>
 
             <View style={headerText}>
-                <Header headerText={'January'}/>
+                <Header headerText={header}/>
             </View>
 
-            <Button style={{flex: 10}} name={"chevron-right"}/>
+            <Button style={{flex: 10}} name={"chevron-thin-right"}/>
         </View>
     );
 
@@ -30,12 +31,11 @@ const styles = {
         flexDirection: 'row',
         flex: 1,
         backgroundColor: '#1e88e5',
-        padding: 40
+        padding: 25
     },
     headerText: {
         flex: 80,
         height: 40,
-        paddingLeft: 10,
         alignSelf: 'stretch',
     },
 };

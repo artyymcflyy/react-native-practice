@@ -20,12 +20,12 @@ const example = props => {
 const styles = {
     container: {
         position: 'absolute',
-        top: Dimensions.get('window').height/4 - 70,
-        left: Dimensions.get('window').width/4 - 10,
+        top: Dimensions.get('window').height/4 - 45,
+        left: Dimensions.get('window').width/4 + 10,
     },
     infoCircleView: {
-        height: 200,
-        width: 200,
+        height: 175,
+        width: 175,
         backgroundColor: 'white',
         borderWidth: 5,
         borderRadius: 100,

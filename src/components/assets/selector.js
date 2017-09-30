@@ -14,13 +14,13 @@ const Selector = props => {
 
     return (
         <View style={mainView}>
-            <Button style={{flex: 10}} name={"chevron-thin-left"}/>
+            <Button style={{flex: 10}} name={"chevron-thin-left"} color={'white'}/>
 
             <View style={headerText}>
                 <Header headerText={header}/>
             </View>
 
-            <Button style={{flex: 10}} name={"chevron-thin-right"}/>
+            <Button style={{flex: 10}} name={"chevron-thin-right"} color={'white'}/>
         </View>
     );
 
@@ -31,7 +31,7 @@ const styles = {
         flexDirection: 'row',
         flex: 1,
         backgroundColor: '#1e88e5',
-        padding: 25
+        padding: 30
     },
     headerText: {
         flex: 80,

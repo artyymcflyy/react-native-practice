@@ -24,7 +24,11 @@ const Home = props => {
 
             <View style={bottomHalf}>
                 <View style={dividerView}>
-                    <InfoDivider flat={false} infoTitleLeft={'Drive Time'} infoTitleMiddle={'Activity'} infoTitleRight={'Phone Usage'}/>
+                    <InfoDivider flat={false}
+                                 infoTitleLeft={'Total Travel Time'} infoTitleMiddle={'Activity'} infoTitleRight={'Phone Usage'}
+                                 infoDataLeft={'15'} infoDataMiddle={'5.7'} infoDataRight={'5'}
+                                 infoUnitsLeft={'Minutes'} infoUnitsMiddle={'Miles'} infoUnitsRight={'Percent'}
+                    />
                 </View>
                 <View style={ buttonView }>
                     <Button style={bottomChevronStyle} name={'chevron-down'} color={'black'} onPress={onPress} />

@@ -25,6 +25,7 @@ const styles = {
         color: 'white',
         textAlign: 'center',
         fontSize: 32,
+        left: 5,
         elevation: 1
     }
 };

@@ -7,7 +7,8 @@ import InfoForDivider from './infoForDivider';
 
 const infoDivider = props => {
 
-    const {infoTitleLeft, infoTitleMiddle, infoTitleRight, flat} = props;
+    const {infoTitleLeft, infoTitleMiddle, infoTitleRight, infoDataLeft, infoDataMiddle, infoDataRight,
+        infoUnitsLeft, infoUnitsMiddle, infoUnitsRight, flat} = props;
 
     const { flatDividers, flatSectionStyle } = flatStyles;
     const { curvedDividers, curvedSectionStyle, curvedDividedSection } = curvedStyles;
@@ -25,17 +26,13 @@ const infoDivider = props => {
     }else{
         return (
             <View style={curvedSectionStyle}>
-                <View>
-                    <InfoForDivider style={{marginRight: 20}} infoTitle={infoTitleLeft}/>
-                </View>
+                <InfoForDivider infoTitle={infoTitleLeft} infoData={infoDataLeft} infoUnits={infoUnitsLeft}/>
                 <View style={curvedDividedSection}>
-                    <View style={[{marginRight: 0}, curvedDividers]}/>
-                    <InfoForDivider infoTitle={infoTitleMiddle}/>
-                    <View style={[{marginLeft: 0},curvedDividers]}/>
+                    <View style={curvedDividers}/>
+                    <InfoForDivider infoTitle={infoTitleMiddle} infoData={infoDataMiddle} infoUnits={infoUnitsMiddle}/>
+                    <View style={curvedDividers}/>
                 </View>
-                <View>
-                    <InfoForDivider style={{marginLeft: 20}} infoTitle={infoTitleRight}/>
-                </View>
+                <InfoForDivider infoTitle={infoTitleRight} infoData={infoDataRight} infoUnits={infoUnitsRight}/>
             </View>
         );
     }
@@ -61,7 +58,7 @@ const curvedStyles = {
     curvedSectionStyle: {
         flex: 30,
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         left: 5,
     },
     curvedDividedSection: {
@@ -69,7 +66,8 @@ const curvedStyles = {
         justifyContent: 'space-between',
         alignSelf: 'center',
         width: 125,
-        paddingTop: 50,
+        top: 10,
+        margin: 10,
     },
     curvedDividers: {
         height: 125,

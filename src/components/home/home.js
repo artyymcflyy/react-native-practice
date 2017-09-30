@@ -4,8 +4,6 @@ import { View, Image, StatusBar } from 'react-native';
 //components
 import Button from '../assets/button';
 import InfoCircle from '../assets/infoCircle';
-import Header from '../assets/header';
-import InfoForDivider from '../infoDivider/infoForDivider';
 import InfoDivider from '../infoDivider/infoDivider';
 import Selector from '../assets/selector';
 
@@ -13,7 +11,7 @@ const Home = props => {
 
     const{ onPress } = props;
 
-    const { viewStyle, bottomChevronStyle, topHalf, bottomHalf, middleSection, mainView, logo, logoImage } = styles;
+    const { viewStyle, bottomChevronStyle, topHalf, bottomHalf, middleSection, logo, logoImage } = styles;
 
     return(
         <View style={ viewStyle }>
@@ -26,17 +24,14 @@ const Home = props => {
             </View>
 
             <InfoCircle header={'12%'} subtext={'Discount'}/>
-            {/*<Header headerText={'Monthly Info'}/>*/}
-            {/*<View style={middleSection}>*/}
-                {/*<InfoDivider infoTitleLeft={'Drive Time'} infoTitleMiddle={'Activity'} infoTitleRight={'Phone Usage'}/>*/}
-            {/*</View>*/}
-
-            {/*<View style={ middleSection }>*/}
-                {/*<Image style={banner} source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}/>*/}
-            {/*</View>*/}
 
             <View style={ bottomHalf }>
-                {/*<Button style={bottomChevronStyle} name={"chevron-down"} onPress={onPress} />*/}
+                <View style={middleSection}>
+                    <InfoDivider infoTitleLeft={'Drive Time'} infoTitleMiddle={'Activity'} infoTitleRight={'Phone Usage'}/>
+                </View>
+            </View>
+            <View>
+                <Button style={bottomChevronStyle} name={'chevron-down'} color={'black'} onPress={onPress} />
             </View>
             <View style={logo}>
                 <Image style={logoImage} source={require('./img/logo.png')}/>
@@ -55,16 +50,11 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center'
     },
-    mainView: {
-        flex: 80,
-        height: 40,
-        alignSelf: 'stretch',
-    },
     topHalf: {
-        flex: 40,
+        flex: 45,
     },
     bottomHalf: {
-        flex: 60
+        flex: 55
     },
     middleSection: {
         flex: 30,

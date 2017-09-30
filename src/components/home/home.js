@@ -13,7 +13,7 @@ const Home = props => {
 
     const{ onPress } = props;
 
-    const { viewStyle, bottomChevronStyle, topHalf, bottomHalf, middleSection, mainView, banner, logo, logoImage } = styles;
+    const { viewStyle, bottomChevronStyle, topHalf, bottomHalf, middleSection, mainView, middleSectionCircle, middleSectionCircle1, middleSectionCircle2, logo, logoImage } = styles;
 
     return(
         <View style={ viewStyle }>
@@ -22,12 +22,9 @@ const Home = props => {
                 <Selector/>
             </View>
 
-            {/*<View style={ middleSection }>*/}
-                {/*<Image style={banner} source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}>*/}
-                    {/*<InfoCircle header={'12%'} subtext={'Discount'}/>*/}
-                {/*</Image>*/}
-            {/*</View>*/}
-
+            <View style={ middleSection }>
+            </View>
+            <InfoCircle header={'12%'} subtext={'Discount'}/>
             {/*<Header headerText={'Monthly Info'}/>*/}
             {/*<View style={middleSection}>*/}
                 {/*<InfoDivider infoTitleLeft={'Drive Time'} infoTitleMiddle={'Activity'} infoTitleRight={'Phone Usage'}/>*/}
@@ -71,11 +68,14 @@ const styles = {
     middleSection: {
         flex: 30,
     },
-    banner: {
-        flex: 5,
+    middleSectionCircle: {
         alignSelf: 'stretch',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    middleSectionCircle1: {
+        position: 'absolute',
+        top: 100,
     },
     logo: {
         flex: 20,

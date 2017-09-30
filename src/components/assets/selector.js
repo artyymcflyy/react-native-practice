@@ -1,7 +1,7 @@
 //React
 import React from 'react';
 //React-native
-import {View} from 'react-native';
+import {View, Dimensions} from 'react-native';
 //Components
 import Header from '../assets/header';
 import Button from '../assets/button';
@@ -35,6 +35,7 @@ const styles = {
     headerText: {
         flex: 80,
         height: 40,
+        paddingLeft: 10,
         alignSelf: 'stretch',
     },
 };

@@ -13,17 +13,18 @@ const Home = props => {
 
     const{ onPress } = props;
 
-    const { viewStyle, bottomChevronStyle, topHalf, bottomHalf, middleSection, mainView, middleSectionCircle, middleSectionCircle1, middleSectionCircle2, logo, logoImage } = styles;
+    const { viewStyle, bottomChevronStyle, topHalf, bottomHalf, middleSection, mainView, logo, logoImage } = styles;
 
     return(
         <View style={ viewStyle }>
             <StatusBar backgroundColor="#005cb2" barStyle="light-content" />
             <View style={topHalf}>
-                <Selector/>
+                <Selector header={'January'}/>
             </View>
 
             <View style={ middleSection }>
             </View>
+
             <InfoCircle header={'12%'} subtext={'Discount'}/>
             {/*<Header headerText={'Monthly Info'}/>*/}
             {/*<View style={middleSection}>*/}
@@ -60,22 +61,13 @@ const styles = {
         alignSelf: 'stretch',
     },
     topHalf: {
-        flex: 30,
+        flex: 40,
     },
     bottomHalf: {
-        flex: 55
+        flex: 60
     },
     middleSection: {
         flex: 30,
-    },
-    middleSectionCircle: {
-        alignSelf: 'stretch',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    middleSectionCircle1: {
-        position: 'absolute',
-        top: 100,
     },
     logo: {
         flex: 20,

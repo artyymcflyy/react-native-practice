@@ -20,19 +20,21 @@ const example = props => {
 const styles = {
     container: {
         position: 'absolute',
-        top: Dimensions.get('window').height/4 - 60,
-        left: Dimensions.get('window').width/2 - 40,
+        top: Dimensions.get('window').height/4 - 70,
+        left: Dimensions.get('window').width/4 - 10,
     },
     infoCircleView: {
-        height: 100,
-        width: 100,
-        borderRadius: 50,
+        height: 200,
+        width: 200,
         backgroundColor: 'white',
+        borderWidth: 5,
+        borderRadius: 100,
+        borderColor: '#ecac00',
         alignItems: 'center',
         justifyContent: 'center'
     },
     headerText: {
-        fontSize: 38,
+        fontSize: 64,
         fontWeight: '500'
     },
     subtextText: {

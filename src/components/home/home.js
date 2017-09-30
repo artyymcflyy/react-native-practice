@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Image, StatusBar } from 'react-native';
+import { View, Image, StatusBar, Button } from 'react-native';
+import ActionButton from 'react-native-action-button';
 
 //components
-import Button from '../assets/button';
 import InfoCircle from '../assets/infoCircle';
 import InfoDivider from '../infoDivider/infoDivider';
 import Selector from '../assets/selector';
@@ -30,8 +30,12 @@ const Home = props => {
                                  infoUnitsLeft={'Minutes'} infoUnitsMiddle={'Miles'} infoUnitsRight={'Percent'}
                     />
                 </View>
+                {/*<ActionButton offsetX={65} offsetY={75} buttonColor='red' position={'left'} onPress={()=>alert('hi')}/>*/}
+                {/*<ActionButton offsetX={65} offsetY={75} buttonColor='blue' position={'right'}/>*/}
                 <View style={ buttonView }>
-                    <Button style={bottomChevronStyle} name={'chevron-down'} color={'black'} onPress={onPress} />
+                    <Button title="View Trips" color="#757575" onPress={onPress}/>
+                    <View style={{width:30}}/>
+                    <Button title="View Travelers" color="#757575" onPress={()=>alert('hi')}/>
                 </View>
                 <View style={logoView}>
                     <Image style={logoImage} source={require('./img/logo.png')}/>
@@ -65,7 +69,8 @@ const styles = {
         top: 50,
     },
     buttonView: {
-        paddingTop: 80,
+        flexDirection: 'row',
+        bottom: 15
     },
     logoView: {
         flex: 10,
@@ -77,7 +82,7 @@ const styles = {
         width: 300,
         height: 300,
         resizeMode: 'contain'
-    }
+    },
 };
 
 export default Home;

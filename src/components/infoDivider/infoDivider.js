@@ -66,7 +66,7 @@ const curvedStyles = {
         justifyContent: 'space-between',
         alignSelf: 'center',
         width: 125,
-        top: 10,
+        bottom: 20,
         margin: 10,
     },
     curvedDividers: {

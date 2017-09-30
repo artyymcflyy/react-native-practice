@@ -11,7 +11,7 @@ const Home = props => {
 
     const{ onPress } = props;
 
-    const { viewStyle, bottomChevronStyle, topHalf, bottomHalf, middleSection, logo, logoImage } = styles;
+    const { viewStyle, bottomChevronStyle, topHalf, bottomHalf, logoView, dividerView, buttonView, logoImage } = styles;
 
     return(
         <View style={ viewStyle }>
@@ -20,21 +20,18 @@ const Home = props => {
                 <Selector header={'January'}/>
             </View>
 
-            <View style={ middleSection }>
-            </View>
-
             <InfoCircle header={'12%'} subtext={'Discount'}/>
 
-            <View style={ bottomHalf }>
-                <View style={middleSection}>
-                    <InfoDivider infoTitleLeft={'Drive Time'} infoTitleMiddle={'Activity'} infoTitleRight={'Phone Usage'}/>
+            <View style={bottomHalf}>
+                <View style={dividerView}>
+                    <InfoDivider flat={false} infoTitleLeft={'Drive Time'} infoTitleMiddle={'Activity'} infoTitleRight={'Phone Usage'}/>
                 </View>
-            </View>
-            <View>
-                <Button style={bottomChevronStyle} name={'chevron-down'} color={'black'} onPress={onPress} />
-            </View>
-            <View style={logo}>
-                <Image style={logoImage} source={require('./img/logo.png')}/>
+                <View style={ buttonView }>
+                    <Button style={bottomChevronStyle} name={'chevron-down'} color={'black'} onPress={onPress} />
+                </View>
+                <View style={logoView}>
+                    <Image style={logoImage} source={require('./img/logo.png')}/>
+                </View>
             </View>
         </View>
     );
@@ -51,16 +48,23 @@ const styles = {
         alignItems: 'center'
     },
     topHalf: {
-        flex: 45,
+        flex: 35,
     },
     bottomHalf: {
-        flex: 55
+        flex: 65,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    middleSection: {
-        flex: 30,
+    dividerView:{
+        flex: 45,
+        top: 50,
     },
-    logo: {
-        flex: 20,
+    buttonView: {
+        paddingTop: 80,
+    },
+    logoView: {
+        flex: 10,
         alignItems: 'center',
         justifyContent: 'center'
     },

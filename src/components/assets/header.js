@@ -21,6 +21,7 @@ const styles = {
         alignSelf: 'stretch'
     },
     textInHeader: {
+        color: 'white',
         textAlign: 'center',
         fontSize: 25,
         elevation: 1

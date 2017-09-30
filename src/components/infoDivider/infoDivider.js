@@ -3,7 +3,7 @@ import React from 'react';
 import {View} from 'react-native';
 
 //component
-import InfoForDivider from '../assets/infoForDivider';
+import InfoForDivider from './infoForDivider';
 
 const infoDivider = props => {
 

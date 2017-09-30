@@ -24,7 +24,9 @@ const payload = {
                     {
                         "img": 'https://i.pinimg.com/736x/c7/28/ae/c728ae90470258962ecf92dc72201720--brad-pitt--square-faces.jpg'
                     }
-                ] 
+                ],
+                "startTime": 1415790500,
+                "endTime": 1415791109
             },
             {  
                "id":2,
@@ -36,7 +38,9 @@ const payload = {
                     {
                         "img": 'https://www.biography.com/.image/c_fit%2Ccs_srgb%2Ch_406%2Cq_50%2Cw_620/MTE1ODA0OTcxMzI5MDk1MTgx/beyonce-knowles-39230-3-raw.jpg'
                     }
-                ]
+                ],
+                "startTime": 1415690500,
+                "endTime": 1415791109
             },
             {  
                "id":3,
@@ -45,7 +49,9 @@ const payload = {
                     {
                         "img": 'https://i.pinimg.com/736x/c7/28/ae/c728ae90470258962ecf92dc72201720--brad-pitt--square-faces.jpg'
                     }
-                ]
+                ],
+                "startTime": 1415290500,
+                "endTime": 1415791109
             },
             {  
                "id":4,
@@ -54,7 +60,9 @@ const payload = {
                     {
                         "img": 'https://i.pinimg.com/736x/c7/28/ae/c728ae90470258962ecf92dc72201720--brad-pitt--square-faces.jpg'
                     }
-                ]
+                ],
+                "startTime": 1412790500,
+                "endTime": 1415791109
             },
             {  
                "id":5,
@@ -66,7 +74,9 @@ const payload = {
                     {
                         "img": 'https://www.biography.com/.image/c_fit%2Ccs_srgb%2Ch_406%2Cq_50%2Cw_620/MTE1ODA0OTcxMzI5MDk1MTgx/beyonce-knowles-39230-3-raw.jpg'
                     }
-                ]
+                ],
+                "startTime": 1413790500,
+                "endTime": 1413790600
             },
             {  
                "id":6,
@@ -75,7 +85,9 @@ const payload = {
                     {
                         "img": 'https://i.pinimg.com/736x/c7/28/ae/c728ae90470258962ecf92dc72201720--brad-pitt--square-faces.jpg'
                     }
-                ]
+                ],
+                "startTime": 1315790500,
+                "endTime": 1315791109
             },
             {  
                "id":7,
@@ -87,7 +99,9 @@ const payload = {
                     {
                         "img": 'https://www.biography.com/.image/c_fit%2Ccs_srgb%2Ch_406%2Cq_50%2Cw_620/MTE1ODA0OTcxMzI5MDk1MTgx/beyonce-knowles-39230-3-raw.jpg'
                     }
-                ]
+                ],
+                "startTime": 1315790500,
+                "endTime": 1315701109
             },
             {  
                "id":8,
@@ -96,7 +110,9 @@ const payload = {
                     {
                         "img": 'https://i.pinimg.com/736x/c7/28/ae/c728ae90470258962ecf92dc72201720--brad-pitt--square-faces.jpg'
                     }
-                ]
+                ],
+                "startTime": 1315790500,
+                "endTime": 1315791109
             },
             {  
                "id":9,
@@ -108,7 +124,9 @@ const payload = {
                     {
                         "img": 'https://www.biography.com/.image/c_fit%2Ccs_srgb%2Ch_406%2Cq_50%2Cw_620/MTE1ODA0OTcxMzI5MDk1MTgx/beyonce-knowles-39230-3-raw.jpg'
                     }
-                ]
+                ],
+                "startTime": 1415790500,
+                "endTime": 1415791109
             },
             {  
                "id":10,
@@ -117,7 +135,9 @@ const payload = {
                     {
                         "img": 'https://i.pinimg.com/736x/c7/28/ae/c728ae90470258962ecf92dc72201720--brad-pitt--square-faces.jpg'
                     }
-                ]
+                ],
+                "startTime": 1415790500,
+                "endTime": 1415791109
             }
         ]
     }

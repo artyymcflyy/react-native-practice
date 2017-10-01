@@ -3,8 +3,6 @@ import * as types from './types'
 export const fetchMonth = ({ id }) => async dispatch => {
     try {
         // let payload = await TripsApi.getTrips({ user_id });
-        console.log('ID: ' + id);
-        console.log('DATA: ' + JSON.stringify(payload.data.months[id]));
         dispatch(fetchMonthSuccess({ month: payload.data.months[id] }));
     } catch(error) {
         console.log(error);
@@ -12,7 +10,6 @@ export const fetchMonth = ({ id }) => async dispatch => {
 };
 
 export const fetchMonthSuccess = ({ month }) => {
-    console.log('FETCH: ' + JSON.stringify(month));
     return { type: types.FETCH_MONTH_SUCCESS, month }
 };
 

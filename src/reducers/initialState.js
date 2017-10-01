@@ -1,5 +1,7 @@
 export default {
-    months: [],
+    month: {
+        singleMonth:{},
+    },
     trips: {
         lastMonthsTrips: [],
     },

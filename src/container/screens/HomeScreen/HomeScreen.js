@@ -27,10 +27,7 @@ class HomeScreen extends Component {
     };
 
     componentDidMount() {
-        const {month} = this.props;
-
         this.props.actions.fetchMonth({ id: 0 });
-        console.log('MONTH: ' + JSON.stringify(this.props));
     }
 
     showTripsScreen(){
@@ -48,28 +45,36 @@ class HomeScreen extends Component {
     loadNextMonth(){
         const {month} = this.props;
 
-        this.props.actions.fetchMonth({ id: month.id + 1 });
-        alert(month.nextMonth);
+        const currentId = month.id;
+
+        if(currentId < 3){
+            this.props.actions.fetchMonth({ id: month.id + 1 });
+        }
 
     }
 
     loadPreviousMonth(){
         const {month} = this.props;
 
-        this.props.actions.fetchMonth({ id: month.id - 1 });
-        alert(month.nextMonth);
+        const currentId = month.id;
+
+        if(currentId > 0){
+            this.props.actions.fetchMonth({ id: month.id - 1 });
+        }
     }
 
     render(){
+        const {month} = this.props;
+        alert(JSON.stringify(month));
         return(
-            <Home months={this.props.month} onPressTrips={this.showTripsScreen} onPressUsers={this.showUsersScreen} onPressSelectorLeft={this.loadPreviousMonth} onPressSelectorRight={this.loadNextMonth}/>
+            <Home month={month} onPressTrips={this.showTripsScreen} onPressUsers={this.showUsersScreen} onPressSelectorLeft={this.loadPreviousMonth} onPressSelectorRight={this.loadNextMonth}/>
         );
     }
 }
 
 function mapStateToProps(state) {
     return {
-        month: state.month
+        month: state.month.singleMonth
     };
 }
 

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import trips from './TripsReducer';
 import users from './UsersReducer';
-import months from './MonthReducer';
+import month from './MonthReducer';
 
 const rootReducer = combineReducers({
-    months,
+    month,
     trips,
     users,
 });

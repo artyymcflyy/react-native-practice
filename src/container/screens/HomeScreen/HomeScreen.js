@@ -65,7 +65,6 @@ class HomeScreen extends Component {
 
     render(){
         const {month} = this.props;
-        alert(JSON.stringify(month));
         return(
             <Home month={month} onPressTrips={this.showTripsScreen} onPressUsers={this.showUsersScreen} onPressSelectorLeft={this.loadPreviousMonth} onPressSelectorRight={this.loadNextMonth}/>
         );

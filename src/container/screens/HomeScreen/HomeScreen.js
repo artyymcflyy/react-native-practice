@@ -15,7 +15,7 @@ class HomeScreen extends Component {
         super(props, context);
 
         this.showTripsScreen = this.showTripsScreen.bind(this);
-        this.showUsersScreen = this.showUsersScreen.bind(this);
+        this.showTravelersScreen = this.showTravelersScreen.bind(this);
         this.loadNextMonth = this.loadNextMonth.bind(this);
         this.loadPreviousMonth = this.loadPreviousMonth.bind(this);
     }
@@ -36,7 +36,7 @@ class HomeScreen extends Component {
         navigate('Trips');
     }
 
-    showUsersScreen(){
+    showTravelersScreen(){
         const { navigate } = this.props.navigation;
 
         navigate('Users');
@@ -65,8 +65,15 @@ class HomeScreen extends Component {
 
     render(){
         const {month} = this.props;
+        const onPress = {
+            showTripsScreen: this.showTripsScreen,
+            showTravelersScreen: this.showTravelersScreen,
+            loadPreviousMonth: this.loadPreviousMonth,
+            loadNextMonth: this.loadNextMonth
+        };
+
         return(
-            <Home month={month} onPressTrips={this.showTripsScreen} onPressUsers={this.showUsersScreen} onPressSelectorLeft={this.loadPreviousMonth} onPressSelectorRight={this.loadNextMonth}/>
+            <Home month={month} onPress={onPress}/>
         );
     }
 }

@@ -24,11 +24,12 @@ class TripsScreen extends Component {
     }
 
     tripSelected() {
-        alert('You have clicked a trip!');
+        const { navigate } = this.props.navigation;
+        console.log(this);
+        navigate('Details', {name: 'Brent'});
     }
 
     goBackHome(){
-
         const backAction = NavigationActions.back();
 
         this.props.navigation.dispatch(backAction);

@@ -34,7 +34,7 @@ const Home = props => {
                 {/*<ActionButton offsetX={65} offsetY={75} buttonColor='blue' position={'right'}/>*/}
                 <View style={ buttonView }>
                     <Button title="View Trips" color="#757575" onPress={onPress}/>
-                    <View style={{width:30}}/>
+                    <View style={{width:40}}/>
                     <Button title="View Travelers" color="#757575" onPress={()=>alert('hi')}/>
                 </View>
                 <View style={logoView}>
@@ -56,7 +56,7 @@ const styles = {
         alignItems: 'center'
     },
     topHalf: {
-        flex: 35,
+        flex: 30,
     },
     bottomHalf: {
         flex: 65,

@@ -21,7 +21,7 @@ const styles = {
     container: {
         position: 'absolute',
         top: Dimensions.get('window').height/4 - 45,
-        left: Dimensions.get('window').width/4 + 10,
+        left: Dimensions.get('window').width/4 + 15,
     },
     infoCircleView: {
         height: 175,
@@ -30,6 +30,8 @@ const styles = {
         borderWidth: 5,
         borderRadius: 100,
         borderColor: '#ecac00',
+        shadowColor: '#000',
+        elevation: 25,
         alignItems: 'center',
         justifyContent: 'center'
     },

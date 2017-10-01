@@ -31,7 +31,8 @@ const styles = {
         flexDirection: 'row',
         flex: 1,
         backgroundColor: '#1e88e5',
-        padding: 30
+        padding: 30,
+        elevation: 20
     },
     headerText: {
         flex: 80,

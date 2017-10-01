@@ -1,4 +1,5 @@
 export default {
+    months: [],
     trips: {
         lastMonthsTrips: [],
     },

@@ -9,15 +9,15 @@ import Selector from '../assets/selector';
 
 const Home = props => {
 
-    const{ onPress } = props;
+    const{ onPress, months, onPressSelectorLeft, onPressSelectorRight } = props;
 
-    const { viewStyle, bottomChevronStyle, topHalf, bottomHalf, logoView, dividerView, buttonView, logoImage } = styles;
+    const { viewStyle, topHalf, bottomHalf, logoView, dividerView, buttonView, logoImage } = styles;
 
     return(
         <View style={ viewStyle }>
             <StatusBar backgroundColor="#005cb2" barStyle="light-content" />
             <View style={topHalf}>
-                <Selector header={'January'}/>
+                <Selector months={months} header={'January'} onPressSelectorLeft={onPressSelectorLeft} onPressSelectorRight={onPressSelectorRight}/>
             </View>
 
             <InfoCircle header={'12%'} subtext={'Discount'}/>
@@ -49,11 +49,6 @@ const styles = {
     viewStyle: {
         flex: 1,
         justifyContent: 'space-between',
-    },
-    bottomChevronStyle: {
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
     },
     topHalf: {
         flex: 30,

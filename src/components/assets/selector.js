@@ -8,19 +8,19 @@ import Button from '../assets/button';
 
 const Selector = props => {
 
-    const { header } = props;
+    const { header, onPressSelectorLeft, onPressSelectorRight } = props;
 
     const { mainView, headerText } = styles;
 
     return (
         <View style={mainView}>
-            <Button style={{flex: 10}} name={"chevron-thin-left"} color={'white'}/>
+            <Button style={{flex: 10}} name={"chevron-thin-left"} color={'white'} onPress={onPressSelectorLeft}/>
 
             <View style={headerText}>
                 <Header headerText={header}/>
             </View>
 
-            <Button style={{flex: 10}} name={"chevron-thin-right"} color={'white'}/>
+            <Button style={{flex: 10}} name={"chevron-thin-right"} color={'white'} onPress={onPressSelectorRight}/>
         </View>
     );
 

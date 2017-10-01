@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 //Redux
 import { bindActionCreators } from 'redux';
 
-import * as TripsActions from '../../../actions/TripsActions';
-import * as UsersActions from '../../../actions/UsersActions';
+import * as MonthActions from '../../../actions/MonthActions';
 
 
 import Home from '../../../components/home/home';
@@ -14,8 +13,10 @@ import Home from '../../../components/home/home';
 class HomeScreen extends Component {
     constructor(props, context){
         super(props, context);
-        //this.showTripsScreen = this.showTripsScreen.bind(this);
+
         this.showUsersScreen = this.showUsersScreen.bind(this);
+        this.loadNextMonth = this.loadNextMonth.bind(this);
+        this.loadPreviousMonth = this.loadPreviousMonth.bind(this);
     }
 
     static navigationOptions = {
@@ -23,6 +24,10 @@ class HomeScreen extends Component {
             visible: false,
         }
     };
+
+    componentDidMount() {
+        this.props.actions.fetchMonth({ user_id: 0 });
+    }
 
     /*showTripsScreen(){
         const { navigate } = this.props.navigation;
@@ -36,21 +41,34 @@ class HomeScreen extends Component {
         navigate('Users');
     }
 
+    loadNextMonth(){
+        // const {month} = this.props;
+
+        alert('next month');
+    }
+
+    loadPreviousMonth(){
+        // const {month} = this.props;
+
+        alert('previous month');
+    }
+
     render(){
         return(
-            <Home onPress={this.showUsersScreen}/>
+            <Home months={this.props.months} onPress={this.showUsersScreen} onPressSelectorLeft={this.loadPreviousMonth} onPressSelectorRight={this.loadNextMonth}/>
         );
     }
 }
 
 function mapStateToProps(state) {
     return {
+        months: state.months
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(UsersActions, dispatch)
+        actions: bindActionCreators(MonthActions, dispatch)
     }
 }
 

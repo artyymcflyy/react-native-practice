@@ -1,3 +1,6 @@
 // Trips
 export const FETCH_TRIPS_SUCCESS = 'FETCH_TRIPS_SUCCESS';
+//Users
 export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
+//Month
+export const FETCH_MONTH_SUCCESS = 'FETCH_MONTH_SUCCESS';

@@ -6,7 +6,7 @@ export default function monthReducer( state = initialState.months, action) {
         case types.FETCH_MONTH_SUCCESS:
             return {
                 ...state,
-                months: action.months
+                month: action.month
             };
         default:
             return state;

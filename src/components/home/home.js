@@ -9,15 +9,19 @@ import Selector from '../assets/selector';
 
 const Home = props => {
 
-    const{ onPress, months, onPressSelectorLeft, onPressSelectorRight } = props;
+    const{ onPressTrips, onPressUsers, month, onPressSelectorLeft, onPressSelectorRight } = props;
 
     const { viewStyle, topHalf, bottomHalf, logoView, dividerView, buttonView, logoImage } = styles;
+
+    function selectNextMonth(){
+
+    }
 
     return(
         <View style={ viewStyle }>
             <StatusBar backgroundColor="#005cb2" barStyle="light-content" />
             <View style={topHalf}>
-                <Selector months={months} header={'January'} onPressSelectorLeft={onPressSelectorLeft} onPressSelectorRight={onPressSelectorRight}/>
+                <Selector month={month} header={'January'} onPressSelectorLeft={onPressSelectorLeft} onPressSelectorRight={onPressSelectorRight}/>
             </View>
 
             <InfoCircle header={'12%'} subtext={'Discount'}/>
@@ -33,9 +37,9 @@ const Home = props => {
                 {/*<ActionButton offsetX={65} offsetY={75} buttonColor='red' position={'left'} onPress={()=>alert('hi')}/>*/}
                 {/*<ActionButton offsetX={65} offsetY={75} buttonColor='blue' position={'right'}/>*/}
                 <View style={ buttonView }>
-                    <Button title="View Trips" color="#757575" onPress={()=>alert('hi')}/>
+                    <Button title="View Trips" color="#757575" onPress={onPressTrips}/>
                     <View style={{width:40}}/>
-                    <Button title="View Travelers" color="#757575" onPress={onPress}/>
+                    <Button title="View Travelers" color="#757575" onPress={onPressUsers}/>
                 </View>
                 <View style={logoView}>
                     <Image style={logoImage} source={require('./img/logo.png')}/>

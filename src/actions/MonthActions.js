@@ -1,15 +1,18 @@
 import * as types from './types'
 
-export const fetchMonth = ({ user_id }) => async dispatch => {
+export const fetchMonth = ({ id }) => async dispatch => {
     try {
         // let payload = await TripsApi.getTrips({ user_id });
-        dispatch(fetchMonthSuccess({ months: payload.data.month }))
+        console.log('ID: ' + id);
+        console.log('DATA: ' + JSON.stringify(payload.data.months[id]));
+        dispatch(fetchMonthSuccess({ month: payload.data.months[id] }));
     } catch(error) {
         console.log(error);
     }
 };
 
 export const fetchMonthSuccess = ({ month }) => {
+    console.log('FETCH: ' + JSON.stringify(month));
     return { type: types.FETCH_MONTH_SUCCESS, month }
 };
 
@@ -17,7 +20,7 @@ const payload = {
     data: {
         months: [
             {
-                id: "0",
+                id: 0,
                 discount: '11',
                 name: "art",
                 totalDriveTime: "15",
@@ -27,7 +30,7 @@ const payload = {
                 nextMonth: "September"
             },
             {
-                id: "1",
+                id: 1,
                 discount: '12',
                 name: "art",
                 totalDriveTime: "30",
@@ -37,7 +40,7 @@ const payload = {
                 nextMonth: "October"
             },
             {
-                id: "2",
+                id: 2,
                 discount: '11',
                 name: "art",
                 totalDriveTime: "19",
@@ -47,7 +50,7 @@ const payload = {
                 nextMonth: "November"
             },
             {
-                id: "3",
+                id: 3,
                 discount: '20',
                 name: "art",
                 totalDriveTime: "25",

@@ -26,7 +26,7 @@ class UserScreen extends Component {
     userSelected() {
         const { navigate } = this.props.navigation;
         console.log(this);
-        navigate('Details');
+        navigate('Details', {name: 'Brent'});
     }
 
     goBackHome(){

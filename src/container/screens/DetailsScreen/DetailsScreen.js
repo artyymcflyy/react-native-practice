@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as UsersActions from '../../../actions/UsersActions';
+//Components
+import Details from '../../../components/details/Details';
 
 class DetailsScreen extends Component {
     constructor(props, context){
@@ -25,14 +27,20 @@ class DetailsScreen extends Component {
         this.props.actions.fetchUsers({ id: 0 });
     }
 
+    goBackHome(){
+        const backAction = NavigationActions.back();
+
+        this.props.navigation.dispatch(backAction);
+    }
+
     render(){
-        const {month} = this.props;
+        const { user } = this.props;
         const onPress = {
             loadPreviousMonth: this.loadPreviousMonth
         };
 
         return(
-            <Text>Hey</Text>
+            <Details user={ user } goBack={this.goBackHome} />
         );
     }
 }

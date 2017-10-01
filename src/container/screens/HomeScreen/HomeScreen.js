@@ -8,13 +8,13 @@ import { bindActionCreators } from 'redux';
 import * as MonthActions from '../../../actions/MonthActions';
 
 
-import Home from '../../../components/home/home';
+import Home from '../../../components/home/Home';
 
 class HomeScreen extends Component {
     constructor(props, context){
         super(props, context);
 
-        this.showUsersScreen = this.showUsersScreen.bind(this);
+        this.showTabsScreen = this.showTabsScreen.bind(this);
         this.loadNextMonth = this.loadNextMonth.bind(this);
         this.loadPreviousMonth = this.loadPreviousMonth.bind(this);
     }
@@ -29,16 +29,10 @@ class HomeScreen extends Component {
         this.props.actions.fetchMonth({ user_id: 0 });
     }
 
-    /*showTripsScreen(){
+    showTabsScreen(){
         const { navigate } = this.props.navigation;
 
-        navigate('Trips');
-    }*/
-
-    showUsersScreen(){
-        const { navigate } = this.props.navigation;
-
-        navigate('Users');
+        navigate('Tabs');
     }
 
     loadNextMonth(){
@@ -55,7 +49,11 @@ class HomeScreen extends Component {
 
     render(){
         return(
-            <Home months={this.props.months} onPress={this.showUsersScreen} onPressSelectorLeft={this.loadPreviousMonth} onPressSelectorRight={this.loadNextMonth}/>
+            <Home 
+                months={this.props.months} 
+                onPress={this.showTabsScreen} 
+                onPressSelectorLeft={this.loadPreviousMonth} 
+                onPressSelectorRight={this.loadNextMonth}/>
         );
     }
 }

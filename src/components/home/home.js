@@ -1,19 +1,21 @@
 import React from 'react';
-import { View, Image, StatusBar, Button } from 'react-native';
+import { View, Image, StatusBar } from 'react-native';
+import Button from '../assets/button';
 import ActionButton from 'react-native-action-button';
 
 //components
 import InfoCircle from '../assets/infoCircle';
 import InfoDivider from '../infoDivider/infoDivider';
 import Selector from '../assets/selector';
+import Icon from 'react-native-vector-icons/Entypo';
 
 const Home = props => {
 
     const{ onPress, months, onPressSelectorLeft, onPressSelectorRight } = props;
 
-    const { viewStyle, topHalf, bottomHalf, logoView, dividerView, buttonView, logoImage } = styles;
+    const { viewStyle, topHalf, bottomHalf, logoView, dividerView, buttonView, logoImage, bottomChevronStyle, actionButtonIcon } = styles;
 
-    return(
+    return (
         <View style={ viewStyle }>
             <StatusBar backgroundColor="#005cb2" barStyle="light-content" />
             <View style={topHalf}>
@@ -30,15 +32,18 @@ const Home = props => {
                                  infoUnitsLeft={'Minutes'} infoUnitsMiddle={'Miles'} infoUnitsRight={'Percent'}
                     />
                 </View>
-                {/*<ActionButton offsetX={65} offsetY={75} buttonColor='red' position={'left'} onPress={()=>alert('hi')}/>*/}
-                {/*<ActionButton offsetX={65} offsetY={75} buttonColor='blue' position={'right'}/>*/}
-                <View style={ buttonView }>
+                {/*<ActionButton offsetX={65} offsetY={75} buttonColor='red' position={'left'} onPress={()=>alert('hi')}>
+                    <Icon name="chevron-down" style={styles.actionButtonIcon} />
+                </ActionButton>*/
+                /*<ActionButton offsetX={65} offsetY={75} buttonColor='blue' position={'right'}/>*/
+                /*<View style={ buttonView }>
                     <Button title="View Trips" color="#757575" onPress={()=>alert('hi')}/>
                     <View style={{width:40}}/>
                     <Button title="View Travelers" color="#757575" onPress={onPress}/>
-                </View>
+                </View>*/}
                 <View style={logoView}>
                     <Image style={logoImage} source={require('./img/logo.png')}/>
+                    <Button style={bottomChevronStyle} name={'chevron-down'} color={'black'} onPress={onPress} />
                 </View>
             </View>
         </View>
@@ -52,6 +57,11 @@ const styles = {
     },
     topHalf: {
         flex: 30,
+    },
+    bottomChevronStyle: {
+         flexDirection: 'column',
+         justifyContent: 'center',
+         alignItems: 'center'
     },
     bottomHalf: {
         flex: 65,
@@ -71,14 +81,20 @@ const styles = {
     logoView: {
         flex: 10,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        bottom: 25 
     },
     logoImage: {
         flex: 1,
-        width: 300,
-        height: 300,
+        width: 290,
+        height: 290,
         resizeMode: 'contain'
     },
+    actionButtonIcon: {
+        fontSize: 20,
+        height: 22,
+        color: 'white',
+    }
 };
 
 export default Home;

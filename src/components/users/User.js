@@ -13,29 +13,32 @@ const UserCell = props => {
     const { rowStyle, textStyle, timeStyle, userIcon, chevronStyle, imageStyle, scoreStyle, usageStyle, number, ribbon } = styles;
 
     return (
-        <View style={ rowStyle }>
-            <View style={ imageStyle }>
-                <Image style={ userIcon } source={{uri: user.img}} />
-                <Image style={ ribbon } source={{uri: user.medal}}/>
-            </View>
+        <TouchableHighlight
+            onPress={() => user.id}>
+            <View style={ rowStyle } >
+                <View style={ imageStyle }>
+                    <Image style={ userIcon } source={{uri: user.img}} />
+                    <Image style={ ribbon } source={{uri: user.medal}}/>
+                </View>
 
-            <View style={ scoreStyle }>
-                <Text style={ number } onPress={ onPress }>
-                    { user.score }
-                </Text>
-            </View>
+                <View style={ scoreStyle }>
+                    <Text style={ number } onPress={ onPress }>
+                        { user.score }
+                    </Text>
+                </View>
 
-            <View style={ usageStyle }>
-                <Text style={ number } onPress={ onPress }>
-                    { user.usage }%
-                </Text>
+                <View style={ usageStyle }>
+                    <Text style={ number } onPress={ onPress }>
+                        { user.usage }%
+                    </Text>
+                </View>
+                <TouchableHighlight 
+                    onPress={()=>{}}
+                    style={chevronStyle}>
+                    <Icon name="chevron-right" size={30} />
+                </TouchableHighlight>
             </View>
-            <TouchableHighlight 
-                onPress={()=>{}}
-                style={chevronStyle}>
-                <Icon name="chevron-right" size={30} />
-            </TouchableHighlight>
-        </View>
+        </TouchableHighlight>
     );
 };
 

@@ -38,7 +38,7 @@ const styles = {
     headerText: {
         flex: 80,
         height: 40,
-        alignSelf: 'stretch',
+        alignSelf: 'stretch'
     },
 };
 

@@ -6,7 +6,7 @@ import ActionButton from 'react-native-action-button';
 //components
 import InfoCircle from '../assets/infoCircle';
 import InfoDivider from '../infoDivider/infoDivider';
-import Selector from '../assets/selector';
+import Selector from '../assets/Selector';
 import Icon from 'react-native-vector-icons/Entypo';
 
 const Home = props => {
@@ -21,7 +21,11 @@ const Home = props => {
         <View style={ viewStyle }>
             <StatusBar backgroundColor="#005cb2" barStyle="light-content" />
             <View style={topHalf}>
-                <Selector month={month} header={'January'} onPressSelectorLeft={loadPreviousMonth} onPressSelectorRight={loadNextMonth}/>
+                <Selector 
+                        month={month} 
+                        header={'January'} 
+                        onPressSelectorLeft={loadPreviousMonth} 
+                        onPressSelectorRight={loadNextMonth}/>
             </View>
 
             <InfoCircle header={'12%'} subtext={'Discount'}/>

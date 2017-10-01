@@ -24,7 +24,9 @@ class UserScreen extends Component {
     }
 
     userSelected() {
-        alert('You have clicked a user!');
+        const { navigate } = this.props.navigation;
+        console.log(this);
+        navigate('Details');
     }
 
     goBackHome(){

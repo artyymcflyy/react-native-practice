@@ -7,7 +7,6 @@ import { bindActionCreators } from 'redux';
 
 import * as MonthActions from '../../../actions/MonthActions';
 
-
 import Home from '../../../components/home/Home';
 
 class HomeScreen extends Component {

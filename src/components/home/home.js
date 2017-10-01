@@ -33,9 +33,9 @@ const Home = props => {
                 {/*<ActionButton offsetX={65} offsetY={75} buttonColor='red' position={'left'} onPress={()=>alert('hi')}/>*/}
                 {/*<ActionButton offsetX={65} offsetY={75} buttonColor='blue' position={'right'}/>*/}
                 <View style={ buttonView }>
-                    <Button title="View Trips" color="#757575" onPress={onPress}/>
+                    <Button title="View Trips" color="#757575" onPress={()=>alert('hi')}/>
                     <View style={{width:40}}/>
-                    <Button title="View Travelers" color="#757575" onPress={()=>alert('hi')}/>
+                    <Button title="View Travelers" color="#757575" onPress={onPress}/>
                 </View>
                 <View style={logoView}>
                     <Image style={logoImage} source={require('./img/logo.png')}/>
@@ -62,7 +62,8 @@ const styles = {
         flex: 65,
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 15
     },
     dividerView:{
         flex: 45,

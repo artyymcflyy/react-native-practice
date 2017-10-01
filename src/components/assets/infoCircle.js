@@ -21,7 +21,7 @@ const styles = {
     container: {
         position: 'absolute',
         top: Dimensions.get('window').height/4 - 45,
-        left: Dimensions.get('window').width/4 + 15,
+        left: Dimensions.get('window').width/4 + 7,
     },
     infoCircleView: {
         height: 175,

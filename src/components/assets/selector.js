@@ -32,7 +32,8 @@ const styles = {
         flex: 1,
         backgroundColor: '#1e88e5',
         padding: 30,
-        elevation: 20
+        elevation: 20,
+        justifyContent: 'center'
     },
     headerText: {
         flex: 80,

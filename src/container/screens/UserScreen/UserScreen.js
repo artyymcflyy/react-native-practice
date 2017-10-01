@@ -7,52 +7,51 @@ import { connect } from 'react-redux';
 
 import { NavigationActions } from 'react-navigation';
 //Components
-import TripsList from '../../../components/trips/TripsList';
+import UsersList from '../../../components/users/UsersList';
 
-import * as TripsActions from '../../../actions/TripsActions';
+import * as UsersActions from '../../../actions/UsersActions';
 
-class TripsScreen extends Component {
+class UserScreen extends Component {
     constructor(props, context) {
         super(props, context);
 
-        this.tripSelected = this.tripSelected.bind(this);
+        this.userSelected = this.userSelected.bind(this);
         this.goBackHome = this.goBackHome.bind(this);
     }
 
     componentDidMount() {
-        this.props.actions.fetchTrips({ user_id: 1 });
+        this.props.actions.fetchUsers({ user_id: 1 });
     }
 
-    tripSelected() {
-        alert('You have clicked a trip!');
+    userSelected() {
+        alert('You have clicked a user!');
     }
 
     goBackHome(){
-
         const backAction = NavigationActions.back();
 
         this.props.navigation.dispatch(backAction);
     }
 
     render() {
-        const { trips } = this.props;
+        const { users } = this.props;
 
         return (
-            <TripsList trips={ trips } onPress={ this.tripSelected } goBack={this.goBackHome} />
+            <UsersList users={ users } onPress={ this.userSelected } goBack={this.goBackHome} />
         );
     }
 }
 
 function mapStateToProps(state) {
     return {
-        trips: state.trips.lastMonthsTrips,
+        users: state.users.lastMonthsUsers,
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(TripsActions, dispatch)
+        actions: bindActionCreators(UsersActions, dispatch)
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TripsScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(UserScreen);

@@ -72,7 +72,7 @@ const curvedStyles = {
     curvedDividers: {
         height: 125,
         width: 2,
-        backgroundColor: 'black'
+        backgroundColor: 'grey'
 
     },
 };

@@ -2,21 +2,21 @@
 import React from 'react';
 import { FlatList, StyleSheet, View, Text } from 'react-native';
 //Components
-import Trip from './Trip';
+import User from './User';
 import Button from '../assets/button';
 
-const TripsList = ({ trips, onPress, goBack }) => {
+const UsersList = ({ users, onPress, goBack }) => {
     const { bottomChevronStyle } = styles;
     const _keyExtractor = (item, index) => item.id;
 
     const _renderItem = ({ item }) => (
-        <Trip trip={ item } onPress={ onPress } goBack={goBack}/>
+        <User user={ item } onPress={ onPress } goBack={goBack}/>
     );
 
     return (
         <View>
             <Button style={ bottomChevronStyle } name={ "chevron-up" } onPress={goBack}/>
-            <FlatList data={ trips } renderItem={ _renderItem } keyExtractor={ _keyExtractor } />
+            <FlatList data={ users } renderItem={ _renderItem } keyExtractor={ _keyExtractor } />
         </View>
     );
 };
@@ -26,7 +26,12 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    title: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        alignItems: 'center'
     }
 });
 
-export default TripsList;
+export default UsersList;

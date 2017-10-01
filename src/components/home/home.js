@@ -11,7 +11,9 @@ import Icon from 'react-native-vector-icons/Entypo';
 
 const Home = props => {
 
-    const{ onPress, months, onPressSelectorLeft, onPressSelectorRight } = props;
+    const{ onPress, month} = props;
+
+    const {showTripsScreen, showTravelersScreen, loadPreviousMonth, loadNextMonth} = onPress;
 
     const { viewStyle, topHalf, bottomHalf, logoView, dividerView, buttonView, logoImage, bottomChevronStyle, actionButtonIcon } = styles;
 
@@ -19,7 +21,7 @@ const Home = props => {
         <View style={ viewStyle }>
             <StatusBar backgroundColor="#005cb2" barStyle="light-content" />
             <View style={topHalf}>
-                <Selector months={months} header={'January'} onPressSelectorLeft={onPressSelectorLeft} onPressSelectorRight={onPressSelectorRight}/>
+                <Selector month={month} header={'January'} onPressSelectorLeft={loadPreviousMonth} onPressSelectorRight={loadNextMonth}/>
             </View>
 
             <InfoCircle header={'12%'} subtext={'Discount'}/>

@@ -3,13 +3,13 @@ import {View, Text, Image, Dimensions} from 'react-native';
 
 const example = props => {
 
-    const {header, subtext, userImage} = props;
-    const {infoCircleView, headerText, subtextText, container, userIcon} = styles;
+    const {header, subtext} = props;
+    const {infoCircleView, headerText, subtextText, container} = styles;
 
     return (
         <View style={container}>
             <View style={infoCircleView}>
-                {header ? <Text style={headerText}>{header}</Text> : <Image style={userIcon} source={{uri: userImage}} />}
+                <Text style={headerText}>{header}</Text>
                 <Text style={subtextText}>{subtext}</Text>
             </View>
         </View>
@@ -42,12 +42,6 @@ const styles = {
     subtextText: {
         fontSize: 15
     },
-    userIcon: {
-        borderRadius: 100,
-        height: 165,
-        width: 165,
-        top: 2,
-    }
 };
 
 export default example;

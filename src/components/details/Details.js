@@ -5,14 +5,10 @@ import ActionButton from 'react-native-action-button';
 //components
 import InfoCircle from '../assets/infoCircle';
 import InfoDivider from '../infoDivider/infoDivider';
-import Selector from '../assets/selector';
 import Header from '../assets/header';
-import Button from '../assets/button';
-import Icon from 'react-native-vector-icons/Entypo';
+import { UserImageRenderer } from '../images/UserImageRenderer';
 
 const Details = props => {
-
-    const{ onPress, month} = props;
 
     const { viewStyle, topHalf, bottomHalf, middleText, dividerView, headerMainView, headerText, bottomChevronStyle, actionButtonIcon } = styles;
 
@@ -26,13 +22,12 @@ const Details = props => {
                     </View>
                 </View>
             </View>
-
-            <InfoCircle header={''} userImage={'https://i.pinimg.com/736x/c7/28/ae/c728ae90470258962ecf92dc72201720--brad-pitt--square-faces.jpg'} subtext={''}/>
+            <UserImageRenderer detailScreen={true} images={[{img: 'https://i.pinimg.com/736x/c7/28/ae/c728ae90470258962ecf92dc72201720--brad-pitt--square-faces.jpg'}]}/>
             <View style={middleText}>
                 <Text style={{fontSize: 36}}>Alec</Text>
             </View>
             <View>
-                
+
             </View>
             <View style={bottomHalf}>
                 <View style={dividerView}>

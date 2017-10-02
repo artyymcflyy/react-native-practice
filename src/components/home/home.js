@@ -6,7 +6,7 @@ import ActionButton from 'react-native-action-button';
 //components
 import InfoCircle from '../assets/infoCircle';
 import InfoDivider from '../infoDivider/infoDivider';
-import Selector from '../assets/selector';
+import Selector from '../assets/Selector';
 import Icon from 'react-native-vector-icons/Entypo';
 
 const Home = props => {

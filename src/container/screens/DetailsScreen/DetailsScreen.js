@@ -34,7 +34,7 @@ class DetailsScreen extends Component {
         };
 
         return(
-            <Details user={ user } goBack={this.goBackHome} />
+            <Details user={ {} } trip={false} goBack={this.goBackHome} />
         );
     }
 }

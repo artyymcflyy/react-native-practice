@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, Dimensions } from 'react-native';
 
 const UserImageRenderer = (props) => {
 
-    const { userIcon, subIcon, moreUsers } = styles;
+    const { userIcon, subIcon, moreUsers, detailContainer, detailCircleView } = styles;
 
-    const { style, images } = props;
+    const { style, images, detailScreen } = props;
 
     if(images.length > 1) {
         /*images.map((item, index) => {
@@ -14,16 +14,18 @@ const UserImageRenderer = (props) => {
         });*/
         return (
             <View style={ moreUsers }>
-                <Image style={ userIcon } source={{ uri: props.images[0].img }}/>
-                <Image style={ subIcon } source={{ uri: props.images[1].img }}/>
+                <Image style={ userIcon } source={{ uri: images[0].img }}/>
+                <Image style={ subIcon } source={{ uri: images[1].img }}/>
             </View>
         );
     } else {
         return (
-            <Image style={ userIcon } source={{ uri: props.images[0].img }}/>
+            <View style={detailScreen ? detailContainer : {}}>
+                <Image style={ detailScreen ? detailCircleView : userIcon } source={{ uri: images[0].img }}/>
+            </View>
         );
     }
-}
+};
 
 const styles = {
     userIcon: {
@@ -46,7 +48,23 @@ const styles = {
     moreUsers: {
         flexDirection: 'row'
 
-    }
+    },
+    detailContainer: {
+        position: 'absolute',
+        elevation: 25,
+        top: Dimensions.get('window').height/4 - 45,
+        left: Dimensions.get('window').width/4 + 7,
+    },
+    detailCircleView: {
+        height: 175,
+        width: 175,
+        borderWidth: 5,
+        borderRadius: 100,
+        borderColor: '#ecac00',
+        shadowColor: '#000',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
 }
 
 export { UserImageRenderer };

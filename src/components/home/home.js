@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Image, StatusBar } from 'react-native';
-import Button from '../assets/button';
 import ActionButton from 'react-native-action-button';
 
 //components
 import InfoCircle from '../assets/infoCircle';
 import InfoDivider from '../infoDivider/infoDivider';
 import Selector from '../assets/Selector';
+import Button from '../assets/button';
 import Icon from 'react-native-vector-icons/Entypo';
 
 const Home = props => {
@@ -24,13 +24,13 @@ const Home = props => {
                 <Selector month={month} header={month.currentMonth} onPressSelectorLeft={loadPreviousMonth} onPressSelectorRight={loadNextMonth}/>
             </View>
 
-            <InfoCircle header={month.discount+'%'} subtext={'Discount'}/>
+            <InfoCircle header={month.discount+'%'} subtext={'Discount'} big={true}/>
 
             <View style={bottomHalf}>
                 <View style={dividerView}>
                     <InfoDivider flat={false}
                                  infoTitleLeft={'Total Travel Time'} infoTitleMiddle={'Activity'} infoTitleRight={'Phone Usage'}
-                                 infoDataLeft={'15'} infoDataMiddle={'5.7'} infoDataRight={'5'}
+                                 infoDataLeft={month.totalDriveTime} infoDataMiddle={month.activityCount} infoDataRight={month.phoneUsage}
                                  infoUnitsLeft={'Minutes'} infoUnitsMiddle={'Miles'} infoUnitsRight={'Percent'}
                     />
                 </View>

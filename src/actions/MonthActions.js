@@ -1,6 +1,6 @@
 import * as types from './types'
 
-export const fetchMonth = ({ id }) => async dispatch => {
+export const fetchMonth = (id) => async dispatch => {
     try {
         // let payload = await TripsApi.getTrips({ user_id });
         dispatch(fetchMonthSuccess({ month: payload.data.months[id] }));
@@ -18,33 +18,30 @@ const payload = {
         months: [
             {
                 id: 0,
-                discount: '11',
+                discount: '9',
                 name: "art",
                 totalDriveTime: "15",
                 activityCount: "09",
                 phoneUsage: "10",
-                previousMonth: "July",
-                nextMonth: "September"
+                currentMonth: "August",
             },
             {
                 id: 1,
-                discount: '12',
+                discount: '5',
                 name: "art",
                 totalDriveTime: "30",
                 activityCount: "12",
                 phoneUsage: "22",
-                previousMonth: "August",
-                nextMonth: "October"
+                currentMonth: "September"
             },
             {
                 id: 2,
-                discount: '11',
+                discount: '17',
                 name: "art",
                 totalDriveTime: "19",
                 activityCount: "23",
                 phoneUsage: "23",
-                previousMonth: "September",
-                nextMonth: "November"
+                currentMonth: "October"
             },
             {
                 id: 3,
@@ -53,8 +50,7 @@ const payload = {
                 totalDriveTime: "25",
                 activityCount: "15",
                 phoneUsage: "5",
-                previousMonth: "October",
-                nextMonth: "December"
+                currentMonth: "November"
             }
 
         ]

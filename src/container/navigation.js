@@ -1,6 +1,6 @@
-import HomeScreen from './screens/HomeScreen/HomeScreen';
-import TabsNavigator from './TabsNavigator';
-import DetailsScreen from './screens/DetailsScreen/DetailsScreen';
+import HomeScreen from '../container/screens/HomeScreen/HomeScreen';
+import TabsNavigator from '../container/TabsNavigator';
+import DetailsScreen from '../container/screens/DetailsScreen/DetailsScreen';
 
 import { StackNavigator } from 'react-navigation';
 

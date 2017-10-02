@@ -1,7 +1,7 @@
 //React
 import React, { Component } from 'react';
 //Routing
-import Navigation from './container/Navigation';
+import Navigation from '../src/container/navigation';
 //Redux
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore';

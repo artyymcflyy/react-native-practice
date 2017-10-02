@@ -6,14 +6,14 @@ import ActionButton from 'react-native-action-button';
 //components
 import InfoCircle from '../assets/infoCircle';
 import InfoDivider from '../infoDivider/infoDivider';
-import Selector from '../assets/Selector';
+import Selector from '../assets/selector';
 import Icon from 'react-native-vector-icons/Entypo';
 
 const Home = props => {
 
     const{ onPress, month} = props;
 
-    const {showTripsScreen, showTravelersScreen, loadPreviousMonth, loadNextMonth} = onPress;
+    const {showTripsScreen, showTravelersScreen, showTabsScreen, loadPreviousMonth, loadNextMonth} = onPress;
 
     const { viewStyle, topHalf, bottomHalf, logoView, dividerView, buttonView, logoImage, bottomChevronStyle, actionButtonIcon } = styles;
 
@@ -21,14 +21,10 @@ const Home = props => {
         <View style={ viewStyle }>
             <StatusBar backgroundColor="#005cb2" barStyle="light-content" />
             <View style={topHalf}>
-                <Selector 
-                        month={month} 
-                        header={'January'} 
-                        onPressSelectorLeft={loadPreviousMonth} 
-                        onPressSelectorRight={loadNextMonth}/>
+                <Selector month={month} header={month.currentMonth} onPressSelectorLeft={loadPreviousMonth} onPressSelectorRight={loadNextMonth}/>
             </View>
 
-            <InfoCircle header={'12%'} subtext={'Discount'}/>
+            <InfoCircle header={month.discount+'%'} subtext={'Discount'}/>
 
             <View style={bottomHalf}>
                 <View style={dividerView}>
@@ -49,7 +45,7 @@ const Home = props => {
                 </View>*/}
                 <View style={logoView}>
                     <Image style={logoImage} source={require('./img/logo.png')}/>
-                    <Button style={bottomChevronStyle} name={'chevron-down'} color={'black'} onPress={onPress} />
+                    <Button style={bottomChevronStyle} name={'chevron-down'} color={'black'} onPress={showTabsScreen} />
                 </View>
             </View>
         </View>

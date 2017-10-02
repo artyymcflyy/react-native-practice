@@ -30,7 +30,7 @@ const Home = props => {
                 <View style={dividerView}>
                     <InfoDivider flat={false}
                                  infoTitleLeft={'Total Travel Time'} infoTitleMiddle={'Activity'} infoTitleRight={'Phone Usage'}
-                                 infoDataLeft={'15'} infoDataMiddle={'5.7'} infoDataRight={'5'}
+                                 infoDataLeft={month.totalDriveTime} infoDataMiddle={month.activityCount} infoDataRight={month.phoneUsage}
                                  infoUnitsLeft={'Minutes'} infoUnitsMiddle={'Miles'} infoUnitsRight={'Percent'}
                     />
                 </View>

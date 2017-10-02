@@ -21,7 +21,7 @@ const payload = {
                 discount: '9',
                 name: "art",
                 totalDriveTime: "15",
-                activityCount: "09",
+                activityCount: "9",
                 phoneUsage: "10",
                 currentMonth: "August",
             },

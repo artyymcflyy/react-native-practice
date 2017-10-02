@@ -17,12 +17,6 @@ class DetailsScreen extends Component {
         //this.showDetailsScreen = this.showDetailsScreen.bind(this);
     }
 
-    static navigationOptions = {
-        header: {
-            visible: false,
-        }
-    };
-
     componentDidMount() {
         this.props.actions.fetchUsers({ id: 0 });
     }

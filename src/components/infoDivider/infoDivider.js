@@ -40,7 +40,8 @@ const styles = {
         flex: 30,
         flexDirection: 'row',
         justifyContent: 'center',
-        left: 5
+        left: 5,
+        top: 15
     },
     flatDividers: {
         height: 125,

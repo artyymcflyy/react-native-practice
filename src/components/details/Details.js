@@ -10,7 +10,7 @@ import { UserImageRenderer } from '../images/UserImageRenderer';
 
 const Details = props => {
 
-    const { viewStyle, topHalf, bottomHalf, middleText, dividerView, headerMainView, headerText, bottomChevronStyle, actionButtonIcon } = styles;
+    const { viewStyle, topHalf, bottomHalf, middleText, dividerView, headerMainView, headerText, splitInfoCircles } = styles;
 
     return (
         <View style={ viewStyle }>
@@ -24,10 +24,11 @@ const Details = props => {
             </View>
             <UserImageRenderer detailScreen={true} images={[{img: 'https://i.pinimg.com/736x/c7/28/ae/c728ae90470258962ecf92dc72201720--brad-pitt--square-faces.jpg'}]}/>
             <View style={middleText}>
-                <Text style={{fontSize: 36}}>Alec</Text>
+                <Text style={{fontSize: 28}}>Alec</Text>
             </View>
-            <View>
-
+            <View style={splitInfoCircles}>
+                <InfoCircle header={'4.7'} subtext={'User Score'}/>
+                <InfoCircle header={'5%'} subtext={'Phone Usage'}/>
             </View>
             <View style={bottomHalf}>
                 <View style={dividerView}>
@@ -37,15 +38,6 @@ const Details = props => {
                                  infoUnitsLeft={'Minutes'} infoUnitsMiddle={'Miles'} infoUnitsRight={'Percent'}
                     />
                 </View>
-                {/*<ActionButton offsetX={65} offsetY={75} buttonColor='red' position={'left'} onPress={()=>alert('hi')}>
-                    <Icon name="chevron-down" style={styles.actionButtonIcon} />
-                </ActionButton>*/
-                    /*<ActionButton offsetX={65} offsetY={75} buttonColor='blue' position={'right'}/>*/
-                    /*<View style={ buttonView }>
-                        <Button title="View Trips" color="#757575" onPress={()=>alert('hi')}/>
-                        <View style={{width:40}}/>
-                        <Button title="View Travelers" color="#757575" onPress={onPress}/>
-                    </View>*/}
             </View>
         </View>
     );
@@ -66,7 +58,7 @@ const styles = {
     },
     middleText: {
         flex: 25,
-        top: 50,
+        top: 45,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -103,6 +95,11 @@ const styles = {
         height: 40,
         alignSelf: 'stretch'
     },
+    splitInfoCircles: {
+        flex:1,
+        flexDirection: 'row',
+        alignItems: 'center',
+    }
 };
 
 export default Details;

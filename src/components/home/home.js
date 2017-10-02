@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Image, StatusBar } from 'react-native';
-import Button from '../assets/button';
 import ActionButton from 'react-native-action-button';
 
 //components
 import InfoCircle from '../assets/infoCircle';
 import InfoDivider from '../infoDivider/infoDivider';
 import Selector from '../assets/selector';
+import Button from '../assets/button';
 import Icon from 'react-native-vector-icons/Entypo';
 
 const Home = props => {

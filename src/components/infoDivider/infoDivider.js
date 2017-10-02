@@ -16,11 +16,11 @@ const infoDivider = props => {
     if(flat){
         return (
             <View style={flatSectionStyle}>
-                <InfoForDivider style={{marginRight: 20}} infoTitle={infoTitleLeft}/>
-                <View style={[{marginRight: 50}, flatDividers]}/>
-                <InfoForDivider infoTitle={infoTitleMiddle}/>
-                <View style={[{marginLeft:50},flatDividers]}/>
-                <InfoForDivider style={{marginLeft: 20}} infoTitle={infoTitleRight}/>
+                <InfoForDivider style={{marginRight: 20}} infoTitle={infoTitleLeft} infoData={infoDataLeft} infoUnits={infoUnitsLeft}/>
+                <View style={[{}, flatDividers]}/>
+                <InfoForDivider infoTitle={infoTitleMiddle} infoData={infoDataLeft} infoUnits={infoUnitsLeft}/>
+                <View style={[{},flatDividers]}/>
+                <InfoForDivider style={{marginLeft: 20}} infoTitle={infoTitleRight} infoData={infoDataLeft} infoUnits={infoUnitsLeft}/>
             </View>
         );
     }else{
@@ -43,8 +43,7 @@ const flatStyles = {
     flatSectionStyle: {
         flex: 30,
         flexDirection: 'row',
-        justifyContent: 'center',
-        left: 5,
+        justifyContent: 'center'
     },
     flatDividers: {
         height: 125,
@@ -72,7 +71,7 @@ const curvedStyles = {
     curvedDividers: {
         height: 125,
         width: 2,
-        backgroundColor: 'grey'
+        backgroundColor: 'black'
 
     },
 };

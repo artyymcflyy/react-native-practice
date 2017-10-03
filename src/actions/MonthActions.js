@@ -18,7 +18,7 @@ const payload = {
         months: [
             {
                 id: 0,
-                discount: '9',
+                discount: 9,
                 name: "art",
                 totalDriveTime: "15",
                 activityCount: "9",
@@ -27,7 +27,7 @@ const payload = {
             },
             {
                 id: 1,
-                discount: '5',
+                discount: 5,
                 name: "art",
                 totalDriveTime: "30",
                 activityCount: "12",
@@ -36,7 +36,7 @@ const payload = {
             },
             {
                 id: 2,
-                discount: '17',
+                discount: 17,
                 name: "art",
                 totalDriveTime: "19",
                 activityCount: "23",
@@ -45,7 +45,7 @@ const payload = {
             },
             {
                 id: 3,
-                discount: '20',
+                discount: 20,
                 name: "art",
                 totalDriveTime: "25",
                 activityCount: "15",

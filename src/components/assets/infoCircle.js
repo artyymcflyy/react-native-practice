@@ -1,15 +1,26 @@
 import React from 'react';
 import {View, Text, Image, Dimensions} from 'react-native';
+import AnimateNumber from 'react-native-animate-number';
 
 const example = props => {
 
-    const {header, subtext, big} = props;
-    const {infoCircleViewBig, infoCircleViewSmall, bigHeaderText, smallHeaderText, bigSubtextText, smallSubtextText, bigContainer, smallContainer} = styles;
+    const {header, subtext, big, unit} = props;
+    const {numberText, infoCircleViewBig, infoCircleViewSmall, bigHeaderText, smallHeaderText, bigSubtextText, smallSubtextText, bigContainer, smallContainer} = styles;
 
     return (
         <View style={big ? bigContainer : smallContainer}>
             <View style={big ? infoCircleViewBig : infoCircleViewSmall}>
-                <Text style={big ? bigHeaderText : smallHeaderText}>{header}</Text>
+                <View style={numberText}>
+                    <AnimateNumber 
+                        value={header}
+                        timing={(interval, progress) => {
+                            // slow start, slow end
+                            return interval * (2 - Math.sin(Math.PI*progress) )*10
+                        }} 
+                        countBy={1} 
+                        style={big ? bigHeaderText : smallHeaderText}/>
+                    <Text style={big ? bigHeaderText : smallHeaderText}>{unit}</Text>
+                </View>
                 <Text style={big ? bigSubtextText : smallSubtextText}>{subtext}</Text>
             </View>
         </View>
@@ -65,6 +76,9 @@ const styles = {
     },
     smallSubtextText: {
         fontSize: 12
+    },
+    numberText: {
+        flexDirection: 'row'
     }
 };
 
